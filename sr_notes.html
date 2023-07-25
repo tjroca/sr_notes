@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <title>SR Notes</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Gudea:wght@400;700&family=Inter&display=swap');
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {}
+
+    .material-symbols-outlined {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .material-symbols-outlined:hover {
+      cursor: pointer;
+    }
+
+    .nav {
+      text-align: center;
+    }
+
+    .btn {
+      margin: 30px 8px;
+      width: 190px;
+      height: 35px;
+      border: 2px solid transparent;
+    }
+
+    .generate-btn {
+      margin: 30px 10px;
+      float: right;
+    }
+
+    .dark-btn {
+      background-color: #D9D9D9;
+    }
+
+    .btn:hover {
+      background-color: rgba(213, 26, 94, 0.2);
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+
+    .main-section {
+      margin: 0 115px;
+    }
+
+    .section {
+      width: 800px;
+      background-color: #f1f1f1;
+      padding: 10px 100px;
+      overflow: auto;
+      display: inline-block;
+      height: 95vh;
+    }
+
+    .input-section {
+      float: left;
+    }
+
+    .output-section {
+      float: right;
+      text-align: center;
+    }
+
+    .section-header {
+      font-size: 20px;
+      font-weight: 400;
+      text-align: center;
+      margin: 10px 0;
+      margin-bottom: 20px;
+    }
+
+    .field-container {
+      margin: 15px 0;
+    }
+
+    .textarea-container label {
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 400;
+      width: 30%;
+    }
+
+    input {
+      float: right;
+      width: 360px;
+      height: 24px;
+      padding: 0 5px;
+      border: none;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    textarea {
+      border: none;
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      padding: 5px;
+    }
+
+    textarea:focus {
+      outline: none;
+    }
+
+    .output-ta {
+      margin-bottom: 60px;
+    }
+
+    .sub2 {
+      margin: 40px 0;
+    }
+
+    .sub2 label {
+      display: block;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- feedback -->
+  <div class="feedback">
+    <a href="mailto:tylerro@checkpoint.com?subject=Web SR Notes Feedback"><span class="material-symbols-outlined">chat_bubble</span></a>
+  </div>
+
+  <div class="nav">
+    <button class="btn" id="first-session-btn">First Session</button>
+    <button class="btn" id="followup-session-btn">Follow up Session</button>
+    <button class="btn" id="escalation-template-btn">Escalation Template</button>
+  </div>
+
+  <div class="main-section">
+
+    <!-- input section -->
+    <!--  -->
+    <div id="input-section" class="input-section first-session-section section">
+
+      <!-- First session section -->
+      <div id="first-session-sub-container" class="input-section-sub-container">
+        <h3 class="input-header section-header">First Remote Session</h3>
+        <div class="sub1">
+          <div class="field-container">
+            <label>SR Number</label>
+            <input id="frs-sr-number-field" type="text">
+          </div>
+          <div class="field-container">
+            <label>Customer Name</label>
+            <input id="frs-customer-name-field" type="text">
+          </div>
+          <div class="field-container">
+            <label>Contact Number</label>
+            <input id="frs-contact-number-field" type="text">
+          </div>
+          <div class="field-container">
+            <label>Environment & Version</label>
+            <input id="frs-environment-field" type="text">
+          </div>
+          <div class="field-container">
+            <label>Business Impact</label>
+            <input id="frs-business-impact-field" type="text">
+          </div>
+        </div>
+        <div class="sub2">
+          <div class="field-container textarea-container">
+            <label class="summaryofissue-ta">Summary of Issue</label>
+            <textarea id="frs-issue-summary-field" rows="5"></textarea>
+          </div>
+          <div class="field-container textarea-container">
+            <label class="findings-ta">Findings</label>
+            <textarea id="frs-findings-field" rows="14"></textarea>
+          </div>
+        </div>
+        <div class="sub3">
+          <div class="field-container">
+            <label>Files & Location</label>
+            <input id="frs-files-location-field" type="text">
+          </div>
+          <div class="field-container">
+            <label>Next Steps</label>
+            <input id="frs-next-steps-field" type="text">
+          </div>
+        </div>
+        <button id="gen-first-session-notes" class="btn generate-btn dark-btn">Generate Notes</button>
+        <button id="frs-gen-email" class="btn generate-btn dark-btn gen-email">Generate Email</button>
+      </div>
+
+      <!-- Follow up session section-->
+      <div id="followup-session-sub-container" class="input-section-sub-container hidden">
+        <h3 class="input-header section-header">Follow up Session</h3>
+
+        <div class="sub1">
+          <div class="field-container">
+            <label>SR Number</label>
+            <input id="fo-sr-number-field" type="text">
+          </div>
+          <div class="field-container">
+            <label>Customer Name</label>
+            <input id="fo-customer-name-field" type="text">
+          </div>
+        </div>
+
+        <div class="sub2">
+          <div class="field-container textarea-container">
+            <label class="summaryofissue-ta">Summary of Issue</label>
+            <textarea id="fo-issue-summary-field" rows="5"></textarea>
+          </div>
+          <div class="field-container textarea-container">
+            <label class="findings-ta">Findings</label>
+            <textarea id="fo-findings-field" rows="14"></textarea>
+          </div>
+        </div>
+
+        <div class="sub3">
+          <div class="field-container">
+            <label>Files & Location</label>
+            <input id="fo-files-location-field" type="text">
+          </div>
+          <div class="field-container">
+            <label>Next Steps</label>
+            <input id="fo-next-steps-field" type="text">
+          </div>
+        </div>
+        <button id="gen-followup-session-notes" class="btn generate-btn dark-btn">Generate Notes</button>
+        <button id="fo-gen-email" class="btn generate-btn dark-btn gen-email">Generate Email</button>
+      </div>
+
+
+      <!-- Escalation template section -->
+      <div id="escalation-template-sub-container" class="input-section-sub-container hidden">
+        <h3 class="input-header section-header">Escalation Template</h3>
+
+        <div class="sub1">
+          <div class="field-container">
+            <label>SR Number</label>
+            <input id="sr-number-field" type="text">
+          </div>
+          <div class="field-container">
+            <label>Customer Name</label>
+            <input id="customer-name-field" type="text">
+          </div>
+          <div class="field-container">
+            <label>Environment & Version</label>
+            <input id="environment-field" type="text">
+          </div>
+          <div class="field-container">
+            <label>Business Impact</label>
+            <input id="business-impact-field" type="text">
+          </div>
+        </div>
+
+        <div class="sub2">
+          <div class="field-container textarea-container">
+            <label class="summaryofissue-ta">Summary of Issue</label>
+            <textarea id="issue-summary-field" rows="5"></textarea>
+          </div>
+          <div class="field-container textarea-container">
+            <label class="findings-ta">Findings</label>
+            <textarea id="findings-field" rows="14"></textarea>
+          </div>
+        </div>
+
+        <div class="sub3">
+          <div class="field-container">
+            <label>Files & Location</label>
+            <input id="files-location-field" type="text">
+          </div>
+          <div class="field-container">
+            <label>Lab Replication</label>
+            <input id="lab-replication-field" type="text">
+          </div>
+        </div>
+        <button id="gen-escalation-notes" class="btn generate-btn dark-btn">Generate Notes</button>
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+
+    <!-- output section -->
+    <div class="output-section section">
+      <h3 class="output-header section-header">Output</h3>
+      <textarea id="output-field" class="output-ta" rows="40" readonly></textarea>
+      <button id="copy-btn" class="btn dark-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
+
+  </div>
+
+
+  <!--  -->
+  <!-- Javascript -->
+  <!--  -->
+  <script type="text/javascript">
+    window.onload = function() {
+
+
+      // Show first session template
+      document.querySelector("#first-session-btn").onclick = function() {
+        document.querySelector("#first-session-sub-container").classList.remove("hidden");
+        document.querySelector("#followup-session-sub-container").classList.add("hidden");
+        document.querySelector("#escalation-template-sub-container").classList.add("hidden");
+      }
+
+      // Show follow up session template
+      document.querySelector("#followup-session-btn").onclick = function() {
+        document.querySelector("#first-session-sub-container").classList.add("hidden");
+        document.querySelector("#followup-session-sub-container").classList.remove("hidden");
+        document.querySelector("#escalation-template-sub-container").classList.add("hidden");
+      }
+
+      // Show escalation template
+      document.querySelector("#escalation-template-btn").onclick = function() {
+        document.querySelector("#first-session-sub-container").classList.add("hidden");
+        document.querySelector("#followup-session-sub-container").classList.add("hidden");
+        document.querySelector("#escalation-template-sub-container").classList.remove("hidden");
+      }
+
+    }
+    document.querySelector(".gen-email").onclick = function() {
+      const outputField = document.querySelector("#output-field");
+      const outputString = `Hello, {{{Recipient.FirstName}}},\n\nThank you for your time on the remote session today. Below is a summary of that session as well as the next steps for this case. If you have any questions or you discover any new information, please let us know. Thank you again for your time and for choosing Check Point as your security partner.\n\nFindings\n════════\n${document.querySelector("#frs-findings-field").value}\n\nNext Steps\n══════════\n${document.querySelector("#frs-next-steps-field").value}`;
+      outputField.value = outputString;
+    }
+
+    document.querySelector("#fo-gen-email").onclick = function() {
+      const outputField = document.querySelector("#output-field");
+      const outputString = `Hello, {{{Recipient.FirstName}}},\n\nThank you for your time on the remote session today. Below is a summary of that session as well as the next steps for this case. If you have any questions or you discover any new information, please let us know. Thank you again for your time and for choosing Check Point as your security partner.\n\nFindings\n════════\n${document.querySelector("#fo-findings-field").value}\n\nNext Steps\n══════════\n${document.querySelector("#fo-next-steps-field").value}`;
+      outputField.value = outputString;
+    }
+
+
+
+    document.querySelector("#gen-first-session-notes").onclick = function() {
+      const outputField = document.querySelector("#output-field");
+      console.log(outputField);
+
+      const outputString = `# REMOTE SESSION NOTES #    
+╔═════════╗
+║SR NUMBER
+╚═════════╝
+${document.querySelector("#frs-sr-number-field").value}
+
+╔═════════════╗
+║CUSTOMER NAME
+╚═════════════╝
+${document.querySelector("#frs-customer-name-field").value}
+
+╔══════════════╗
+║CONTACT NUMBER
+╚══════════════╝
+${document.querySelector("#frs-contact-number-field").value}
+
+╔═════════════════════╗
+║ENVIRONMENT & VERSION
+╚═════════════════════╝
+${document.querySelector("#frs-environment-field").value}
+
+╔═══════════════╗
+║BUSINESS IMPACT
+╚═══════════════╝
+${document.querySelector("#frs-business-impact-field").value}
+
+╔════════════════╗
+║SUMMARY OF ISSUE
+╚════════════════╝
+${document.querySelector("#frs-issue-summary-field").value}
+
+╔════════╗
+║FINDINGS
+╚════════╝
+${document.querySelector("#frs-findings-field").value}
+
+╔════════════════╗
+║FILES & LOCATION
+╚════════════════╝
+${document.querySelector("#frs-files-location-field").value}
+
+╔══════════╗
+║NEXT STEPS
+╚══════════╝
+${document.querySelector("#frs-next-steps-field").value}
+`;
+
+
+      outputField.value = outputString;
+    }
+
+
+
+
+    document.querySelector("#gen-followup-session-notes").onclick = function() {
+      const outputField = document.querySelector("#output-field");
+
+      const outputString = `# REMOTE SESSION NOTES #    
+╔═════════╗
+║SR NUMBER
+╚═════════╝
+${document.querySelector("#fo-sr-number-field").value}
+
+╔═════════════╗
+║CUSTOMER NAME
+╚═════════════╝
+${document.querySelector("#fo-customer-name-field").value}
+
+╔════════════════╗
+║SUMMARY OF ISSUE
+╚════════════════╝
+${document.querySelector("#fo-issue-summary-field").value}
+
+╔════════╗
+║FINDINGS
+╚════════╝
+${document.querySelector("#fo-findings-field").value}
+
+╔════════════════╗
+║FILES & LOCATION
+╚════════════════╝
+${document.querySelector("#fo-files-location-field").value}
+
+╔══════════╗
+║NEXT STEPS
+╚══════════╝
+${document.querySelector("#fo-next-steps-field").value}`;
+
+      outputField.value = outputString;
+    }
+
+
+    document.querySelector("#gen-escalation-notes").onclick = function() {
+      const outputField = document.querySelector("#output-field");
+      console.log(outputField);
+
+      const outputString = `# REMOTE SESSION NOTES #    
+╔═════════╗
+║SR NUMBER
+╚═════════╝
+${document.querySelector("#sr-number-field").value}
+
+╔═════════════╗
+║CUSTOMER NAME
+╚═════════════╝
+${document.querySelector("#customer-name-field").value}
+
+╔═════════════════════╗
+║ENVIRONMENT & VERSION
+╚═════════════════════╝
+${document.querySelector("#environment-field").value}
+
+╔═══════════════╗
+║BUSINESS IMPACT
+╚═══════════════╝
+${document.querySelector("#business-impact-field").value}
+
+╔════════════════╗
+║SUMMARY OF ISSUE
+╚════════════════╝
+${document.querySelector("#issue-summary-field").value}
+
+╔════════╗
+║FINDINGS
+╚════════╝
+${document.querySelector("#findings-field").value}
+
+╔════════════════╗
+║FILES & LOCATION
+╚════════════════╝
+${document.querySelector("#files-location-field").value}
+
+╔═══════════════╗
+║LAB REPLICATION
+╚═══════════════╝
+${document.querySelector("#lab-replication-field").value}
+`;
+
+
+      outputField.value = outputString;
+    }
+
+
+    async function copyToClipboard() {
+      var outputText = document.querySelector("#output-field").value;
+      try {
+        await navigator.clipboard.writeText(outputText);
+        console.log("copied text");
+      } catch (err) {
+        console.error("Failed to copy");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

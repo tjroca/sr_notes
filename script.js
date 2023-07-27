@@ -2,7 +2,6 @@
 
       // Show first session template
       document.querySelector("#first-session-btn").onclick = function() {
-        alert('first clicked');
         document.querySelector("#first-session-sub-container").classList.remove("hidden");
         document.querySelector("#followup-session-sub-container").classList.add("hidden");
         document.querySelector("#escalation-template-sub-container").classList.add("hidden");
@@ -10,7 +9,6 @@
 
       // Show follow up session template
       document.querySelector("#followup-session-btn").onclick = function() {
-        alert('second clicked');
         document.querySelector("#first-session-sub-container").classList.add("hidden");
         document.querySelector("#followup-session-sub-container").classList.remove("hidden");
         document.querySelector("#escalation-template-sub-container").classList.add("hidden");
@@ -18,7 +16,6 @@
 
       // Show escalation template
       document.querySelector("#escalation-template-btn").onclick = function() {
-        alert('third clicked');
         document.querySelector("#first-session-sub-container").classList.add("hidden");
         document.querySelector("#followup-session-sub-container").classList.add("hidden");
         document.querySelector("#escalation-template-sub-container").classList.remove("hidden");

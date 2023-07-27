@@ -1,0 +1,39 @@
+/* 
+body color: #181a1b
+section color: #202324
+input/textarea color: #3b3b3b
+light button color: #6b6b6b
+dark button color: #2d3133
+letter color: #f0f0f0
+*/
+
+label {
+    color: #f0f0f0;
+}
+
+body {
+    background: #181a1b !important;
+}
+
+h3 {
+    color: #f0f0f0;
+}
+
+.btn {
+    color: #f0f0f0;
+    background-color: #6b6b6b !important;
+}
+
+.generate-btn,
+.dark-btn {
+    background-color: #2d3133 !important;
+}
+
+input,
+textarea {
+    background-color: #3b3b3b !important;
+}
+
+.section {
+    background-color: #202324;
+}

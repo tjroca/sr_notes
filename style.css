@@ -9,15 +9,30 @@
 }
 
 
-.material-symbols-outlined {
+.feedback {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
 }
 
-.material-symbols-outlined:hover {
+.feedback:hover {
     cursor: pointer;
 }
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.dark-mode-toggle:hover {
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+    color: #f0f0f0;
+}
+
 
 .nav {
     text-align: center;

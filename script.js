@@ -42,7 +42,9 @@ document.querySelector("#fo-gen-email").onclick = function() {
 
 document.querySelector("#gen-first-session-notes").onclick = function() {
     const outputField = document.querySelector("#output-field");
-    console.log(outputField);
+    let frsFindingsField = document.querySelector("#frs-findings-field").value;
+    const formattedFindings = formatText(frsFindingsField);
+
 
     const outputString = `# REMOTE SESSION NOTES #    
 ╔═════════╗
@@ -78,7 +80,7 @@ ${document.querySelector("#frs-issue-summary-field").value}
 ╔════════╗
 ║FINDINGS
 ╚════════╝
-${document.querySelector("#frs-findings-field").value}
+${formattedFindings}
 
 ╔════════════════╗
 ║FILES & LOCATION
@@ -100,6 +102,8 @@ ${document.querySelector("#frs-next-steps-field").value}
 
 document.querySelector("#gen-followup-session-notes").onclick = function() {
     const outputField = document.querySelector("#output-field");
+    let foFindingsField = document.querySelector("#fo-findings-field").value;
+    const formattedFindings = formatText(foFindingsField);    
 
     const outputString = `# REMOTE SESSION NOTES #    
 ╔═════════╗
@@ -120,7 +124,7 @@ ${document.querySelector("#fo-issue-summary-field").value}
 ╔════════╗
 ║FINDINGS
 ╚════════╝
-${document.querySelector("#fo-findings-field").value}
+${formattedFindings}
 
 ╔════════════════╗
 ║FILES & LOCATION
@@ -138,7 +142,8 @@ ${document.querySelector("#fo-next-steps-field").value}`;
 
 document.querySelector("#gen-escalation-notes").onclick = function() {
     const outputField = document.querySelector("#output-field");
-    console.log(outputField);
+    let escFindingsField = document.querySelector("#esc-findings-field").value;
+    const formattedFindings = formatText(escFindingsField);
 
     const outputString = `# REMOTE SESSION NOTES #    
 ╔═════════╗
@@ -169,7 +174,7 @@ ${document.querySelector("#issue-summary-field").value}
 ╔════════╗
 ║FINDINGS
 ╚════════╝
-${document.querySelector("#findings-field").value}
+${formattedFindings}
 
 ╔════════════════╗
 ║FILES & LOCATION
@@ -184,6 +189,21 @@ ${document.querySelector("#lab-replication-field").value}
 
 
     outputField.value = outputString;
+}
+
+function formatText(findingsString) {
+    var lines = findingsString.split("\n");
+    var formattedLines = [];
+    for (var i = 0; i < lines.length; i++) {
+        if (lines[i].startsWith("- ")) {
+            const newline = lines[i].replace(/- /gi, "    • ");
+            formattedLines.push(newline + "\n");
+        }else {
+            formattedLines.push(lines[i] + "\n");
+        }
+    }
+    let formattedFindings = formattedLines.join("");
+    return formattedFindings;
 }
 
 

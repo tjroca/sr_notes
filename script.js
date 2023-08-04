@@ -42,9 +42,9 @@ document.querySelector("#fo-gen-email").onclick = function() {
 
 document.querySelector("#gen-first-session-notes").onclick = function() {
     const outputField = document.querySelector("#output-field");
+
     let frsFindingsField = document.querySelector("#frs-findings-field").value;
     const formattedFindings = formatText(frsFindingsField);
-
 
     const outputString = `# REMOTE SESSION NOTES #    
 ╔═════════╗

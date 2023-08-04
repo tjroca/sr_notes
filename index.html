@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="icon" type="image/x-icon" href="./favicon_white.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="darkmode.css">
   <title>SR Notes</title>
 
 </head>
@@ -35,51 +36,53 @@
 
       <!-- First session section -->
       <div id="first-session-sub-container" class="input-section-sub-container">
-        <h3 class="input-header section-header">First Remote Session</h3>
-        <div class="sub1">
-          <div class="field-container">
-            <label>SR Number</label>
-            <input id="frs-sr-number-field" type="text">
+        <form>
+          <h3 class="input-header section-header">First Remote Session</h3>
+          <div class="sub1">
+            <div class="field-container">
+              <label>SR Number</label>
+              <input id="frs-sr-number-field" type="text" required>
+            </div>
+            <div class="field-container">
+              <label>Customer Name</label>
+              <input id="frs-customer-name-field" type="text" required>
+            </div>
+            <div class="field-container">
+              <label>Contact Number</label>
+              <input id="frs-contact-number-field" type="text" required>
+            </div>
+            <div class="field-container">
+              <label>Environment & Version</label>
+              <input id="frs-environment-field" type="text" required>
+            </div>
+            <div class="field-container">
+              <label>Business Impact</label>
+              <input id="frs-business-impact-field" type="text" required>
+            </div>
           </div>
-          <div class="field-container">
-            <label>Customer Name</label>
-            <input id="frs-customer-name-field" type="text">
+          <div class="sub2">
+            <div class="field-container textarea-container">
+              <label class="summaryofissue-ta">Summary of Issue</label>
+              <textarea id="frs-issue-summary-field" rows="5" required></textarea>
+            </div>
+            <div class="field-container textarea-container">
+              <label class="findings-ta">Findings</label>
+              <textarea id="frs-findings-field" rows="14" required></textarea>
+            </div>
           </div>
-          <div class="field-container">
-            <label>Contact Number</label>
-            <input id="frs-contact-number-field" type="text">
+          <div class="sub3">
+            <div class="field-container">
+              <label>Files & Location</label>
+              <input id="frs-files-location-field" type="text" required>
+            </div>
+            <div class="field-container">
+              <label>Next Steps</label>
+              <input id="frs-next-steps-field" type="text" required>
+            </div>
           </div>
-          <div class="field-container">
-            <label>Environment & Version</label>
-            <input id="frs-environment-field" type="text">
-          </div>
-          <div class="field-container">
-            <label>Business Impact</label>
-            <input id="frs-business-impact-field" type="text">
-          </div>
-        </div>
-        <div class="sub2">
-          <div class="field-container textarea-container">
-            <label class="summaryofissue-ta">Summary of Issue</label>
-            <textarea id="frs-issue-summary-field" rows="5"></textarea>
-          </div>
-          <div class="field-container textarea-container">
-            <label class="findings-ta">Findings</label>
-            <textarea id="frs-findings-field" rows="14"></textarea>
-          </div>
-        </div>
-        <div class="sub3">
-          <div class="field-container">
-            <label>Files & Location</label>
-            <input id="frs-files-location-field" type="text">
-          </div>
-          <div class="field-container">
-            <label>Next Steps</label>
-            <input id="frs-next-steps-field" type="text">
-          </div>
-        </div>
-        <button id="gen-first-session-notes" class="btn generate-btn dark-btn">Generate Notes</button>
-        <button id="frs-gen-email" class="btn generate-btn dark-btn gen-email">Generate Email</button>
+          <button id="gen-first-session-notes" class="btn generate-btn dark-btn">Generate Notes</button>
+          <button id="frs-gen-email" class="btn generate-btn dark-btn gen-email">Generate Email</button>
+        </form>
       </div>
 
       <!-- Follow up session section-->
@@ -89,33 +92,33 @@
         <div class="sub1">
           <div class="field-container">
             <label>SR Number</label>
-            <input id="fo-sr-number-field" type="text">
+            <input id="fo-sr-number-field" type="text" required>
           </div>
           <div class="field-container">
             <label>Customer Name</label>
-            <input id="fo-customer-name-field" type="text">
+            <input id="fo-customer-name-field" type="text" required>
           </div>
         </div>
 
         <div class="sub2">
           <div class="field-container textarea-container">
             <label class="summaryofissue-ta">Summary of Issue</label>
-            <textarea id="fo-issue-summary-field" rows="5"></textarea>
+            <textarea id="fo-issue-summary-field" rows="5" required></textarea>
           </div>
           <div class="field-container textarea-container">
             <label class="findings-ta">Findings</label>
-            <textarea id="fo-findings-field" rows="14"></textarea>
+            <textarea id="fo-findings-field" rows="14" required></textarea>
           </div>
         </div>
 
         <div class="sub3">
           <div class="field-container">
             <label>Files & Location</label>
-            <input id="fo-files-location-field" type="text">
+            <input id="fo-files-location-field" type="text" required>
           </div>
           <div class="field-container">
             <label>Next Steps</label>
-            <input id="fo-next-steps-field" type="text">
+            <input id="fo-next-steps-field" type="text" required>
           </div>
         </div>
         <button id="gen-followup-session-notes" class="btn generate-btn dark-btn">Generate Notes</button>
@@ -125,49 +128,48 @@
 
       <!-- Escalation template section -->
       <div id="escalation-template-sub-container" class="input-section-sub-container hidden">
-        <h3 class="input-header section-header">Escalation Template</h3>
-
-        <div class="sub1">
-          <div class="field-container">
-            <label>SR Number</label>
-            <input id="sr-number-field" type="text">
+        <form>
+          <h3 class="input-header section-header">Escalation Template</h3>
+          <div class="sub1">
+            <div class="field-container">
+              <label>SR Number</label>
+              <input id="sr-number-field" type="text" required>
+            </div>
+            <div class="field-container">
+              <label>Customer Name</label>
+              <input id="customer-name-field" type="text" required>
+            </div>
+            <div class="field-container">
+              <label>Environment & Version</label>
+              <input id="environment-field" type="text" required>
+            </div>
+            <div class="field-container">
+              <label>Business Impact</label>
+              <input id="business-impact-field" type="text" required>
+            </div>
           </div>
-          <div class="field-container">
-            <label>Customer Name</label>
-            <input id="customer-name-field" type="text">
+          <div class="sub2">
+            <div class="field-container textarea-container">
+              <label class="summaryofissue-ta">Summary of Issue</label>
+              <textarea id="issue-summary-field" rows="5" required></textarea>
+            </div>
+            <div class="field-container textarea-container">
+              <label class="findings-ta">Findings</label>
+              <textarea id="esc-findings-field" rows="14" required></textarea>
+            </div>
           </div>
-          <div class="field-container">
-            <label>Environment & Version</label>
-            <input id="environment-field" type="text">
+          <div class="sub3">
+            <div class="field-container">
+              <label>Files & Location</label>
+              <input id="files-location-field" type="text" required>
+            </div>
+            <div class="field-container">
+              <label>Lab Replication</label>
+              <input id="lab-replication-field" type="text" required>
+            </div>
           </div>
-          <div class="field-container">
-            <label>Business Impact</label>
-            <input id="business-impact-field" type="text">
-          </div>
-        </div>
-
-        <div class="sub2">
-          <div class="field-container textarea-container">
-            <label class="summaryofissue-ta">Summary of Issue</label>
-            <textarea id="issue-summary-field" rows="5"></textarea>
-          </div>
-          <div class="field-container textarea-container">
-            <label class="findings-ta">Findings</label>
-            <textarea id="esc-findings-field" rows="14"></textarea>
-          </div>
-        </div>
-
-        <div class="sub3">
-          <div class="field-container">
-            <label>Files & Location</label>
-            <input id="files-location-field" type="text">
-          </div>
-          <div class="field-container">
-            <label>Lab Replication</label>
-            <input id="lab-replication-field" type="text">
-          </div>
-        </div>
-        <button id="gen-escalation-notes" class="btn generate-btn dark-btn">Generate Notes</button>
+          <button id="gen-escalation-notes" class="btn generate-btn dark-btn">Generate Notes</button>
+        </form>
       </div>
 
 
@@ -188,7 +190,7 @@
 
 
   <script src="script.js"></script>
-  <script src="darkmode.js"></script>
+  <!-- <script src="darkmode.js"></script> -->
   <!-- Google  -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4D011XVH2W"></script>
   <script>

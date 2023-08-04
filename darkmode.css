@@ -24,6 +24,15 @@ h3 {
     background-color: #6b6b6b !important;
 }
 
+.btn:hover {
+    background-color: #bd006e !important;
+}
+
+.btn:active {
+    color: #000000;
+    border: 1px solid #f0f0f0;
+}
+
 .generate-btn,
 .dark-btn {
     background-color: #2d3133 !important;

@@ -40,7 +40,7 @@ document.querySelector("#frs-gen-email").onclick = function() {
 // Follow up session Email
 document.querySelector("#fo-gen-email").onclick = function() {
     const outputField = document.querySelector("#output-field");
-    let findings = document.querySelector("#fo-gen-email");
+    let findings = document.querySelector("#fo-findings-field").value;
     const formattedFindings = formatText(findings);
     const outputString = `Hello, {{{Recipient.FirstName}}},\n\nThank you for your time on the remote session today. Below is a summary of that session as well as the next steps for this case. If you have any questions or you discover any new information, please let us know. Thank you again for your time and for choosing Check Point as your security partner.\n\nFindings\n════════\n${formattedFindings}\n\nNext Steps\n══════════\n${document.querySelector("#fo-next-steps-field").value}`;
     outputField.value = outputString;

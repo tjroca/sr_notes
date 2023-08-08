@@ -36,53 +36,51 @@
 
       <!-- First session section -->
       <div id="first-session-sub-container" class="input-section-sub-container">
-        <form>
-          <h3 class="input-header section-header">First Remote Session</h3>
-          <div class="sub1">
-            <div class="field-container">
-              <label>SR Number</label>
-              <input id="frs-sr-number-field" type="text" required>
-            </div>
-            <div class="field-container">
-              <label>Customer Name</label>
-              <input id="frs-customer-name-field" type="text" required>
-            </div>
-            <div class="field-container">
-              <label>Contact Number</label>
-              <input id="frs-contact-number-field" type="text" required>
-            </div>
-            <div class="field-container">
-              <label>Environment & Version</label>
-              <input id="frs-environment-field" type="text" required>
-            </div>
-            <div class="field-container">
-              <label>Business Impact</label>
-              <input id="frs-business-impact-field" type="text" required>
-            </div>
+        <h3 class="input-header section-header">First Remote Session</h3>
+        <div class="sub1">
+          <div class="field-container">
+            <label>SR Number</label>
+            <input id="frs-sr-number-field" type="text" required>
           </div>
-          <div class="sub2">
-            <div class="field-container textarea-container">
-              <label class="summaryofissue-ta">Summary of Issue</label>
-              <textarea id="frs-issue-summary-field" rows="5" required></textarea>
-            </div>
-            <div class="field-container textarea-container">
-              <label class="findings-ta">Findings</label>
-              <textarea id="frs-findings-field" rows="14" required></textarea>
-            </div>
+          <div class="field-container">
+            <label>Customer Name</label>
+            <input id="frs-customer-name-field" type="text" required>
           </div>
-          <div class="sub3">
-            <div class="field-container">
-              <label>Files & Location</label>
-              <input id="frs-files-location-field" type="text" required>
-            </div>
-            <div class="field-container">
-              <label>Next Steps</label>
-              <input id="frs-next-steps-field" type="text" required>
-            </div>
+          <div class="field-container">
+            <label>Contact Number</label>
+            <input id="frs-contact-number-field" type="text" required>
           </div>
-          <button id="gen-first-session-notes" class="btn generate-btn dark-btn">Generate Notes</button>
-          <button id="frs-gen-email" class="btn generate-btn dark-btn gen-email">Generate Email</button>
-        </form>
+          <div class="field-container">
+            <label>Environment & Version</label>
+            <input id="frs-environment-field" type="text" required>
+          </div>
+          <div class="field-container">
+            <label>Business Impact</label>
+            <input id="frs-business-impact-field" type="text" required>
+          </div>
+        </div>
+        <div class="sub2">
+          <div class="field-container textarea-container">
+            <label class="summaryofissue-ta">Summary of Issue</label>
+            <textarea id="frs-issue-summary-field" rows="5" required></textarea>
+          </div>
+          <div class="field-container textarea-container">
+            <label class="findings-ta">Findings</label>
+            <textarea id="frs-findings-field" rows="14" required></textarea>
+          </div>
+        </div>
+        <div class="sub3">
+          <div class="field-container">
+            <label>Files & Location</label>
+            <input id="frs-files-location-field" type="text" required>
+          </div>
+          <div class="field-container">
+            <label>Next Steps</label>
+            <input id="frs-next-steps-field" type="text" required>
+          </div>
+        </div>
+        <button id="gen-first-session-notes" class="btn generate-btn dark-btn">Generate Notes</button>
+        <button id="frs-gen-email" class="btn generate-btn dark-btn gen-email">Generate Email</button>
       </div>
 
       <!-- Follow up session section-->
@@ -128,48 +126,46 @@
 
       <!-- Escalation template section -->
       <div id="escalation-template-sub-container" class="input-section-sub-container hidden">
-        <form>
-          <h3 class="input-header section-header">Escalation Template</h3>
-          <div class="sub1">
-            <div class="field-container">
-              <label>SR Number</label>
-              <input id="sr-number-field" type="text" required>
-            </div>
-            <div class="field-container">
-              <label>Customer Name</label>
-              <input id="customer-name-field" type="text" required>
-            </div>
-            <div class="field-container">
-              <label>Environment & Version</label>
-              <input id="environment-field" type="text" required>
-            </div>
-            <div class="field-container">
-              <label>Business Impact</label>
-              <input id="business-impact-field" type="text" required>
-            </div>
+        <h3 class="input-header section-header">Escalation Template</h3>
+        <div class="sub1">
+          <div class="field-container">
+            <label>SR Number</label>
+            <input id="sr-number-field" type="text" required>
           </div>
-          <div class="sub2">
-            <div class="field-container textarea-container">
-              <label class="summaryofissue-ta">Summary of Issue</label>
-              <textarea id="issue-summary-field" rows="5" required></textarea>
-            </div>
-            <div class="field-container textarea-container">
-              <label class="findings-ta">Findings</label>
-              <textarea id="esc-findings-field" rows="14" required></textarea>
-            </div>
+          <div class="field-container">
+            <label>Customer Name</label>
+            <input id="customer-name-field" type="text" required>
           </div>
-          <div class="sub3">
-            <div class="field-container">
-              <label>Files & Location</label>
-              <input id="files-location-field" type="text" required>
-            </div>
-            <div class="field-container">
-              <label>Lab Replication</label>
-              <input id="lab-replication-field" type="text" required>
-            </div>
+          <div class="field-container">
+            <label>Environment & Version</label>
+            <input id="environment-field" type="text" required>
           </div>
-          <button id="gen-escalation-notes" class="btn generate-btn dark-btn">Generate Notes</button>
-        </form>
+          <div class="field-container">
+            <label>Business Impact</label>
+            <input id="business-impact-field" type="text" required>
+          </div>
+        </div>
+        <div class="sub2">
+          <div class="field-container textarea-container">
+            <label class="summaryofissue-ta">Summary of Issue</label>
+            <textarea id="esc-issue-summary-field" rows="5" required></textarea>
+          </div>
+          <div class="field-container textarea-container">
+            <label class="findings-ta">Findings</label>
+            <textarea id="esc-findings-field" rows="14" required></textarea>
+          </div>
+        </div>
+        <div class="sub3">
+          <div class="field-container">
+            <label>Files & Location</label>
+            <input id="files-location-field" type="text" required>
+          </div>
+          <div class="field-container">
+            <label>Lab Replication</label>
+            <input id="lab-replication-field" type="text" required>
+          </div>
+        </div>
+        <button id="gen-escalation-notes" class="btn generate-btn dark-btn">Generate Notes</button>
       </div>
 
 

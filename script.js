@@ -42,7 +42,8 @@ document.querySelector("#fo-gen-email").onclick = function() {
 
 document.querySelector("#gen-first-session-notes").onclick = function() {
     const outputField = document.querySelector("#output-field");
-
+    let frsIssueSummaryField = document.querySelector("#frs-issue-summary-field").value;
+    const formattedIssueSummary = formatText(frsIssueSummaryField);
     let frsFindingsField = document.querySelector("#frs-findings-field").value;
     const formattedFindings = formatText(frsFindingsField);
 
@@ -75,7 +76,7 @@ ${document.querySelector("#frs-business-impact-field").value}
 ╔════════════════╗
 ║SUMMARY OF ISSUE
 ╚════════════════╝
-${document.querySelector("#frs-issue-summary-field").value}
+${formattedIssueSummary}
 
 ╔════════╗
 ║FINDINGS
@@ -102,6 +103,8 @@ ${document.querySelector("#frs-next-steps-field").value}
 
 document.querySelector("#gen-followup-session-notes").onclick = function() {
     const outputField = document.querySelector("#output-field");
+    let issueSummaryField = document.querySelector("#fo-issue-summary-field").value;
+    const formattedIssueSummary = formatText(issueSummaryField);
     let foFindingsField = document.querySelector("#fo-findings-field").value;
     const formattedFindings = formatText(foFindingsField);    
 
@@ -119,7 +122,7 @@ ${document.querySelector("#fo-customer-name-field").value}
 ╔════════════════╗
 ║SUMMARY OF ISSUE
 ╚════════════════╝
-${document.querySelector("#fo-issue-summary-field").value}
+${formattedIssueSummary}
 
 ╔════════╗
 ║FINDINGS
@@ -142,6 +145,8 @@ ${document.querySelector("#fo-next-steps-field").value}`;
 
 document.querySelector("#gen-escalation-notes").onclick = function() {
     const outputField = document.querySelector("#output-field");
+    let escIssueSummaryField = document.querySelector("#esc-issue-summary-field").value;
+    const formattedIssueSummary = formatText(escIssueSummaryField);
     let escFindingsField = document.querySelector("#esc-findings-field").value;
     const formattedFindings = formatText(escFindingsField);
 
@@ -169,7 +174,7 @@ ${document.querySelector("#business-impact-field").value}
 ╔════════════════╗
 ║SUMMARY OF ISSUE
 ╚════════════════╝
-${document.querySelector("#issue-summary-field").value}
+${formattedIssueSummary}
 
 ╔════════╗
 ║FINDINGS

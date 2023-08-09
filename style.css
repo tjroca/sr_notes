@@ -145,3 +145,10 @@ textarea:focus {
 .hidden {
     display: none;
 }
+
+@media only screen and (max-width: 1645px) {
+    .section {
+        display: block;
+        width: 100%;
+    }
+}

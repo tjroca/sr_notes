@@ -3,6 +3,7 @@
 
 * {
     box-sizing: border-box;
+    /* overflow: auto; */
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
@@ -61,8 +62,11 @@
 }
 
 .main-section {
-    margin: 0 115px;
+    /* margin: 0 115px; */
+    margin: 0 auto;
     overflow: auto;
+    width: 90%;
+    max-width: 2000px;
 }
 
 .section {
@@ -70,13 +74,14 @@
     width: 49%;
     background-color: #f1f1f1;
     padding: 10px 100px;
-    overflow: auto;
+    overflow: hidden;
     display: inline-block;
     height: 95vh;
 }
 
 .input-section {
     float: left;
+    /* overflow: auto; */
 }
 
 .output-section {
@@ -98,6 +103,7 @@
 
 .textarea-container label {
     margin-bottom: 10px;
+    overflow: auto;
 }
 
 label {
@@ -120,7 +126,7 @@ input:focus {
 
 textarea {
     border: none;
-    width: 100%;
+    width: 50%;
     max-width: 100%;
     min-width: 100%;
     padding: 5px;
@@ -129,17 +135,32 @@ textarea {
 textarea:focus {
     outline: none;
 }
+.inline-ta {
+    width: 360px;
+    min-width: 360px;
+    max-width: 360px;
+    float: right;
+    background-color: white;
+}
 
 .output-ta {
     margin-bottom: 20px;
 }
 
+.sub1 {
+    overflow: auto;
+}
+
 .sub2 {
-    margin: 40px 0;
+    margin: 20px 0;
 }
 
 .sub2 label {
     display: block;
+}
+
+.sub3 {
+    overflow: auto;
 }
 
 .hidden {

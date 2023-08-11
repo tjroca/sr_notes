@@ -158,7 +158,7 @@ document.querySelector("#gen-escalation-notes").onclick = function() {
     let escFindingsField = document.querySelector("#esc-findings-field").value;
     const formattedFindings = formatText(escFindingsField);
 
-    const outputString = `# REMOTE SESSION NOTES #    
+    const outputString = `# ESCALATION NOTES #    
 ╔═════════╗
 ║SR NUMBER
 ╚═════════╝

@@ -35,7 +35,7 @@
     <div id="input-section" class="input-section first-session-section section">
 
       <!-- First session section -->
-      <div id="first-session-sub-container" class="input-section-sub-container">
+      <div id="first-session-sub-container" class="input-section-sub-container sub1">
         <h3 class="input-header section-header">First Remote Session</h3>
         <div class="sub1">
           <div class="field-container">
@@ -51,12 +51,12 @@
             <input id="frs-contact-number-field" type="text" required>
           </div>
           <div class="field-container">
-            <label>Environment & Version</label>
-            <input id="frs-environment-field" type="text" required>
-          </div>
-          <div class="field-container">
             <label>Business Impact</label>
             <input id="frs-business-impact-field" type="text" required>
+          </div>
+          <div class="field-container">
+            <label>Environment & Version</label>
+            <textarea id="frs-environment-field" class="inline-ta" rows="2" required></textarea>
           </div>
         </div>
         <div class="sub2">
@@ -76,7 +76,7 @@
           </div>
           <div class="field-container">
             <label>Next Steps</label>
-            <input id="frs-next-steps-field" type="text" required>
+            <textarea id="frs-next-steps-field" class="inline-ta" required></textarea>
           </div>
         </div>
         <button id="gen-first-session-notes" class="btn generate-btn dark-btn">Generate Notes</button>
@@ -116,7 +116,7 @@
           </div>
           <div class="field-container">
             <label>Next Steps</label>
-            <input id="fo-next-steps-field" type="text" required>
+            <textarea id="fo-next-steps-field" class="inline-ta" required></textarea>
           </div>
         </div>
         <button id="gen-followup-session-notes" class="btn generate-btn dark-btn">Generate Notes</button>
@@ -137,12 +137,12 @@
             <input id="customer-name-field" type="text" required>
           </div>
           <div class="field-container">
-            <label>Environment & Version</label>
-            <input id="environment-field" type="text" required>
-          </div>
-          <div class="field-container">
             <label>Business Impact</label>
             <input id="business-impact-field" type="text" required>
+          </div>
+          <div class="field-container">
+            <label>Environment & Version</label>
+            <textarea id="environment-field" class="inline-ta" required></textarea>
           </div>
         </div>
         <div class="sub2">
@@ -162,7 +162,7 @@
           </div>
           <div class="field-container">
             <label>Lab Replication</label>
-            <input id="lab-replication-field" type="text" required>
+            <textarea id="lab-replication-field" class="inline-ta" rows="1" required></textarea>
           </div>
         </div>
         <button id="gen-escalation-notes" class="btn generate-btn dark-btn">Generate Notes</button>

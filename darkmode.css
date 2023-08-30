@@ -7,8 +7,12 @@ dark button color: #2d3133
 letter color: #f0f0f0
 */
 
+.material-symbols-outlined {
+    color: #f0f0f0 !important;
+}
+
 label {
-    color: #f0f0f0;
+    color: #f0f0f0 !important;
 }
 
 body {

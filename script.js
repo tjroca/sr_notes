@@ -22,7 +22,18 @@
       }
 
     // Dark mode toggle
-
+      document.querySelector(".dark-mode-toggle").onclick = function() {
+        let darkDisabled = document.getElementsByTagName('link')[3].disabled
+        if (darkDisabled) {
+            document.getElementsByTagName('link')[3].disabled = false;
+        }
+        else if (!darkDisabled) {
+            document.getElementsByTagName('link')[3].disabled = true;
+        }
+        else {
+            console.log("Error toggling dark mode");
+        }
+      }
 
 // }
 

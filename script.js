@@ -96,12 +96,10 @@ ${document.querySelector("#frs-business-impact-field").value}
 ║SUMMARY OF ISSUE
 ╚════════════════╝
 ${formattedIssueSummary}
-
 ╔════════╗
 ║FINDINGS
 ╚════════╝
 ${formattedFindings}
-
 ╔════════════════╗
 ║FILES & LOCATION
 ╚════════════════╝

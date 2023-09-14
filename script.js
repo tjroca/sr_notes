@@ -140,12 +140,10 @@ ${document.querySelector("#fo-customer-name-field").value}
 ║SUMMARY OF ISSUE
 ╚════════════════╝
 ${formattedIssueSummary}
-
 ╔════════╗
 ║FINDINGS
 ╚════════╝
 ${formattedFindings}
-
 ╔════════════════╗
 ║FILES & LOCATION
 ╚════════════════╝
@@ -192,12 +190,10 @@ ${document.querySelector("#business-impact-field").value}
 ║SUMMARY OF ISSUE
 ╚════════════════╝
 ${formattedIssueSummary}
-
 ╔════════╗
 ║FINDINGS
 ╚════════╝
 ${formattedFindings}
-
 ╔════════════════╗
 ║FILES & LOCATION
 ╚════════════════╝

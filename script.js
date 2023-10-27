@@ -58,6 +58,9 @@ document.querySelector("#fo-gen-email").onclick = function() {
 }
 
 
+let HEADER_START = "❰❰";
+let HEADER_END = "❱❱";
+
 
 document.querySelector("#gen-first-session-notes").onclick = function() {
     const outputField = document.querySelector("#output-field");
@@ -67,47 +70,30 @@ document.querySelector("#gen-first-session-notes").onclick = function() {
     const formattedFindings = formatText(frsFindingsField);
 
     const outputString = `# REMOTE SESSION NOTES #    
-╔═════════╗
-║SR NUMBER
-╚═════════╝
+
+${HEADER_START}SR NUMBER${HEADER_END}
 ${document.querySelector("#frs-sr-number-field").value}
 
-╔═════════════╗
-║CUSTOMER NAME
-╚═════════════╝
+${HEADER_START}CUSTOMER NAME${HEADER_END}
 ${document.querySelector("#frs-customer-name-field").value}
 
-╔══════════════╗
-║CONTACT NUMBER
-╚══════════════╝
+${HEADER_START}CONTACT NUMBER${HEADER_END}
 ${document.querySelector("#frs-contact-number-field").value}
 
-╔═════════════════════╗
-║ENVIRONMENT & VERSION
-╚═════════════════════╝
+${HEADER_START}ENVIRONMENT & VERSION${HEADER_END}
 ${document.querySelector("#frs-environment-field").value}
 
-╔═══════════════╗
-║BUSINESS IMPACT
-╚═══════════════╝
+${HEADER_START}BUSINESS IMPACT${HEADER_END}
 ${document.querySelector("#frs-business-impact-field").value}
 
-╔════════════════╗
-║SUMMARY OF ISSUE
-╚════════════════╝
+${HEADER_START}SUMMARY OF ISSUE${HEADER_END}
 ${formattedIssueSummary}
-╔════════╗
-║FINDINGS
-╚════════╝
+${HEADER_START}FINDINGS${HEADER_END}
 ${formattedFindings}
-╔════════════════╗
-║FILES & LOCATION
-╚════════════════╝
+${HEADER_START}FILES & LOCATION${HEADER_END}
 ${document.querySelector("#frs-files-location-field").value}
 
-╔══════════╗
-║NEXT STEPS
-╚══════════╝
+${HEADER_START}NEXT STEPS${HEADER_END}
 ${document.querySelector("#frs-next-steps-field").value}
 `;
 
@@ -126,32 +112,21 @@ document.querySelector("#gen-followup-session-notes").onclick = function() {
     const formattedFindings = formatText(foFindingsField);    
 
     const outputString = `# REMOTE SESSION NOTES #    
-╔═════════╗
-║SR NUMBER
-╚═════════╝
+
+${HEADER_START}SR NUMBER${HEADER_END}
 ${document.querySelector("#fo-sr-number-field").value}
 
-╔═════════════╗
-║CUSTOMER NAME
-╚═════════════╝
+${HEADER_START}CUSTOMER NAME${HEADER_END}
 ${document.querySelector("#fo-customer-name-field").value}
 
-╔════════════════╗
-║SUMMARY OF ISSUE
-╚════════════════╝
+${HEADER_START}SUMMARY OF ISSUE${HEADER_END}
 ${formattedIssueSummary}
-╔════════╗
-║FINDINGS
-╚════════╝
+${HEADER_START}FINDINGS${HEADER_END}
 ${formattedFindings}
-╔════════════════╗
-║FILES & LOCATION
-╚════════════════╝
+${HEADER_START}FILES & LOCATION${HEADER_END}
 ${document.querySelector("#fo-files-location-field").value}
 
-╔══════════╗
-║NEXT STEPS
-╚══════════╝
+${HEADER_START}NEXT STEPS${HEADER_END}
 ${document.querySelector("#fo-next-steps-field").value}`;
 
     outputField.value = outputString;
@@ -166,42 +141,27 @@ document.querySelector("#gen-escalation-notes").onclick = function() {
     const formattedFindings = formatText(escFindingsField);
 
     const outputString = `# ESCALATION NOTES #    
-╔═════════╗
-║SR NUMBER
-╚═════════╝
+
+${HEADER_START}SR NUMBER${HEADER_END}
 ${document.querySelector("#sr-number-field").value}
 
-╔═════════════╗
-║CUSTOMER NAME
-╚═════════════╝
+${HEADER_START}CUSTOMER NAME${HEADER_END}
 ${document.querySelector("#customer-name-field").value}
 
-╔═════════════════════╗
-║ENVIRONMENT & VERSION
-╚═════════════════════╝
+${HEADER_START}ENVIRONMENT & VERSION${HEADER_END}
 ${document.querySelector("#environment-field").value}
 
-╔═══════════════╗
-║BUSINESS IMPACT
-╚═══════════════╝
+${HEADER_START}BUSINESS IMPACT${HEADER_END}
 ${document.querySelector("#business-impact-field").value}
 
-╔════════════════╗
-║SUMMARY OF ISSUE
-╚════════════════╝
+${HEADER_START}SUMMARY OF ISSUE${HEADER_END}
 ${formattedIssueSummary}
-╔════════╗
-║FINDINGS
-╚════════╝
+${HEADER_START}FINDINGS${HEADER_END}
 ${formattedFindings}
-╔════════════════╗
-║FILES & LOCATION
-╚════════════════╝
+${HEADER_START}FILES & LOCATION${HEADER_END}
 ${document.querySelector("#files-location-field").value}
 
-╔═══════════════╗
-║LAB REPLICATION
-╚═══════════════╝
+${HEADER_START}LAB REPLICATION${HEADER_END}
 ${document.querySelector("#lab-replication-field").value}
 `;
 

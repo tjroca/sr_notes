@@ -69,31 +69,40 @@ document.querySelector("#gen-first-session-notes").onclick = function() {
     let frsFindingsField = document.querySelector("#frs-findings-field").value;
     const formattedFindings = formatText(frsFindingsField);
 
-    const outputString = `# REMOTE SESSION NOTES #    
+    const outputString = `❰❰ 𝗥𝗘𝗠𝗢𝗧𝗘 𝗦𝗘𝗦𝗦𝗜𝗢𝗡 𝗡𝗢𝗧𝗘𝗦 ❱❱
 
-${HEADER_START}SR NUMBER${HEADER_END}
+𝗦𝗥 𝗡𝗨𝗠𝗕𝗘𝗥
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#frs-sr-number-field").value}
 
-${HEADER_START}CUSTOMER NAME${HEADER_END}
+𝗖𝗨𝗦𝗧𝗢𝗠𝗘𝗥 𝗡𝗔𝗠𝗘
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#frs-customer-name-field").value}
 
-${HEADER_START}CONTACT NUMBER${HEADER_END}
+𝗖𝗢𝗡𝗧𝗔𝗖𝗧 𝗡𝗨𝗠𝗕𝗘𝗥
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#frs-contact-number-field").value}
 
-${HEADER_START}ENVIRONMENT & VERSION${HEADER_END}
+𝗘𝗡𝗩𝗜𝗥𝗢𝗡𝗠𝗘𝗡𝗧 & 𝗩𝗘𝗥𝗦𝗜𝗢𝗡
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#frs-environment-field").value}
 
-${HEADER_START}BUSINESS IMPACT${HEADER_END}
+𝗕𝗨𝗦𝗜𝗡𝗘𝗦𝗦 𝗜𝗠𝗣𝗔𝗖𝗧
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#frs-business-impact-field").value}
 
-${HEADER_START}SUMMARY OF ISSUE${HEADER_END}
+𝗦𝗨𝗠𝗠𝗔𝗥𝗬 𝗢𝗙 𝗜𝗦𝗦𝗨𝗘
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${formattedIssueSummary}
-${HEADER_START}FINDINGS${HEADER_END}
+𝗙𝗜𝗡𝗗𝗜𝗡𝗚𝗦
+‾‾‾‾‾‾‾‾‾‾‾
 ${formattedFindings}
-${HEADER_START}FILES & LOCATION${HEADER_END}
+𝗙𝗜𝗟𝗘𝗦 & 𝗟𝗢𝗖𝗔𝗧𝗜𝗢𝗡
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#frs-files-location-field").value}
 
-${HEADER_START}NEXT STEPS${HEADER_END}
+𝗡𝗘𝗫𝗧 𝗦𝗧𝗘𝗣𝗦
+‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#frs-next-steps-field").value}
 `;
 
@@ -111,22 +120,28 @@ document.querySelector("#gen-followup-session-notes").onclick = function() {
     let foFindingsField = document.querySelector("#fo-findings-field").value;
     const formattedFindings = formatText(foFindingsField);    
 
-    const outputString = `# REMOTE SESSION NOTES #    
+    const outputString = `❰❰ 𝗥𝗘𝗠𝗢𝗧𝗘 𝗦𝗘𝗦𝗦𝗜𝗢𝗡 𝗡𝗢𝗧𝗘𝗦 ❱❱    
 
-${HEADER_START}SR NUMBER${HEADER_END}
+𝗦𝗥 𝗡𝗨𝗠𝗕𝗘𝗥
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#fo-sr-number-field").value}
 
-${HEADER_START}CUSTOMER NAME${HEADER_END}
+𝗖𝗨𝗦𝗧𝗢𝗠𝗘𝗥 𝗡𝗔𝗠𝗘
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#fo-customer-name-field").value}
 
-${HEADER_START}SUMMARY OF ISSUE${HEADER_END}
+𝗦𝗨𝗠𝗠𝗔𝗥𝗬 𝗢𝗙 𝗜𝗦𝗦𝗨𝗘
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${formattedIssueSummary}
-${HEADER_START}FINDINGS${HEADER_END}
+𝗙𝗜𝗡𝗗𝗜𝗡𝗚𝗦
+‾‾‾‾‾‾‾‾‾‾‾
 ${formattedFindings}
-${HEADER_START}FILES & LOCATION${HEADER_END}
+𝗙𝗜𝗟𝗘𝗦 & 𝗟𝗢𝗖𝗔𝗧𝗜𝗢𝗡
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#fo-files-location-field").value}
 
-${HEADER_START}NEXT STEPS${HEADER_END}
+𝗡𝗘𝗫𝗧 𝗦𝗧𝗘𝗣𝗦
+‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#fo-next-steps-field").value}`;
 
     outputField.value = outputString;
@@ -140,28 +155,36 @@ document.querySelector("#gen-escalation-notes").onclick = function() {
     let escFindingsField = document.querySelector("#esc-findings-field").value;
     const formattedFindings = formatText(escFindingsField);
 
-    const outputString = `# ESCALATION NOTES #    
+    const outputString = `❰❰ 𝗘𝗦𝗖𝗔𝗟𝗔𝗧𝗜𝗢𝗡 𝗡𝗢𝗧𝗘𝗦 ❱❱ 
 
-${HEADER_START}SR NUMBER${HEADER_END}
+𝗦𝗥 𝗡𝗨𝗠𝗕𝗘𝗥
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#sr-number-field").value}
 
-${HEADER_START}CUSTOMER NAME${HEADER_END}
+𝗖𝗨𝗦𝗧𝗢𝗠𝗘𝗥 𝗡𝗔𝗠𝗘
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#customer-name-field").value}
 
-${HEADER_START}ENVIRONMENT & VERSION${HEADER_END}
+𝗘𝗡𝗩𝗜𝗥𝗢𝗡𝗠𝗘𝗡𝗧 & 𝗩𝗘𝗥𝗦𝗜𝗢𝗡
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#environment-field").value}
 
-${HEADER_START}BUSINESS IMPACT${HEADER_END}
+𝗕𝗨𝗦𝗜𝗡𝗘𝗦𝗦 𝗜𝗠𝗣𝗔𝗖𝗧
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#business-impact-field").value}
 
-${HEADER_START}SUMMARY OF ISSUE${HEADER_END}
+𝗦𝗨𝗠𝗠𝗔𝗥𝗬 𝗢𝗙 𝗜𝗦𝗦𝗨𝗘
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${formattedIssueSummary}
-${HEADER_START}FINDINGS${HEADER_END}
+𝗙𝗜𝗡𝗗𝗜𝗡𝗚𝗦
+‾‾‾‾‾‾‾‾‾‾‾
 ${formattedFindings}
-${HEADER_START}FILES & LOCATION${HEADER_END}
+𝗙𝗜𝗟𝗘𝗦 & 𝗟𝗢𝗖𝗔𝗧𝗜𝗢𝗡
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#files-location-field").value}
 
-${HEADER_START}LAB REPLICATION${HEADER_END}
+𝗟𝗔𝗕 𝗥𝗘𝗣𝗟𝗜𝗖𝗔𝗧𝗜𝗢𝗡
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ${document.querySelector("#lab-replication-field").value}
 `;
 

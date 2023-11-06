@@ -37,6 +37,19 @@
 
 // }
 
+// Download local version
+// document.querySelector("#download-btn").onclick = function() {
+//     alert("download");
+//     $.ajax({
+//     type: "GET",
+//     url: "https://raw.githubusercontent.com/tjroca/sr_notes/main/darkmode.css",
+//     success: function(data) {
+//         console.log(data);
+//         console.log("Download successful");
+//     },
+//     dataType: "html"
+//     });
+// }
 
 
 // First remote session Email
@@ -197,7 +210,7 @@ function formatText(findingsString) {
     var formattedLines = [];
     for (var i = 0; i < lines.length; i++) {
         if (lines[i].startsWith("- ")) {
-            const newline = lines[i].replace(/- /gi, "\t• ");          // bullet points
+            const newline = lines[i].replace(/- /gi, "        • ");          // bullet points
             // const newline1 = lines[i].replace(/->/gi, "➞");           // arrows
             formattedLines.push(newline + "\n");
         }else {
@@ -218,4 +231,9 @@ async function copyToClipboard() {
     } catch (err) {
     console.error("Failed to copy");
     }
+}
+
+// Download local version
+function downloadLocal() {
+
 }

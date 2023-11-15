@@ -232,8 +232,3 @@ async function copyToClipboard() {
     console.error("Failed to copy");
     }
 }
-
-// Download local version
-function downloadLocal() {
-
-}

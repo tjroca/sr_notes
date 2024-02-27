@@ -57,7 +57,7 @@ document.querySelector("#frs-gen-email").onclick = function() {
     const outputField = document.querySelector("#output-field");
     let findings = document.querySelector("#frs-findings-field").value;
     const formattedFindings = formatText(findings);
-    const outputString = `Hello, {{{Recipient.FirstName}}},\n\nThank you for your time on the remote session today. Below is a summary of that session as well as the next steps for this case. If you have any questions or you discover any new information, please let us know. Thank you again for your time and for choosing Check Point as your security partner.\n\nFindings\n════════\n${formattedFindings}\n\nNext Steps\n══════════\n${document.querySelector("#frs-next-steps-field").value}`;
+    const outputString = `Hello {{{Recipient.FirstName}}},\n\nThank you for your time on the remote session today. Below is a summary of that session as well as the next steps for this case. If you have any questions or you discover any new information, please let us know. Thank you again for your time and for choosing Check Point as your security partner.\n\nFindings\n════════\n${formattedFindings}\n\nNext Steps\n══════════\n${document.querySelector("#frs-next-steps-field").value}`;
     outputField.value = outputString;
 }
 
@@ -66,8 +66,35 @@ document.querySelector("#fo-gen-email").onclick = function() {
     const outputField = document.querySelector("#output-field");
     let findings = document.querySelector("#fo-findings-field").value;
     const formattedFindings = formatText(findings);
-    const outputString = `Hello, {{{Recipient.FirstName}}},\n\nThank you for your time on the remote session today. Below is a summary of that session as well as the next steps for this case. If you have any questions or you discover any new information, please let us know. Thank you again for your time and for choosing Check Point as your security partner.\n\nFindings\n════════\n${formattedFindings}\n\nNext Steps\n══════════\n${document.querySelector("#fo-next-steps-field").value}`;
+    const outputString = `Hello {{{Recipient.FirstName}}},\n\nThank you for your time on the remote session today. Below is a summary of that session as well as the next steps for this case. If you have any questions or you discover any new information, please let us know. Thank you again for your time and for choosing Check Point as your security partner.\n\nFindings\n════════\n${formattedFindings}\n\nNext Steps\n══════════\n${document.querySelector("#fo-next-steps-field").value}`;
     outputField.value = outputString;
+}
+
+// Clear first remote session
+document.querySelector("#frs-clear").onclick = function() {
+    let fields = document.getElementsByClassName("frs");
+    for (let i = 0; i < fields.length; i++) {
+        fields[i].value = "";
+    }
+    document.querySelector("#output-field").value = "";
+}
+
+// Clear follow up remote session
+document.querySelector("#fo-clear").onclick = function() {
+    let fields = document.getElementsByClassName("fo");
+    for (let i = 0; i < fields.length; i++) {
+        fields[i].value = "";
+    }
+    document.querySelector("#output-field").value = "";
+}
+
+// Clear escalation
+document.querySelector("#esc-clear").onclick = function() {
+    let fields = document.getElementsByClassName("esc");
+    for (let i = 0; i < fields.length; i++) {
+        fields[i].value = "";
+    }
+    document.querySelector("#output-field").value = "";
 }
 
 

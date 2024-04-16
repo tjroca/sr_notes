@@ -1,5 +1,7 @@
 // window.onload = function() {
 
+let HISTORY = new Array();
+
       // Show first session template
       document.querySelector("#first-session-btn").onclick = function() {
         document.querySelector("#first-session-sub-container").classList.remove("hidden");
@@ -236,8 +238,9 @@ function formatText(findingsString) {
     var lines = findingsString.split("\n");
     var formattedLines = [];
     for (var i = 0; i < lines.length; i++) {
+        console.log(lines[i]);
         if (lines[i].startsWith("- ")) {
-            const newline = lines[i].replace(/- /gi, "        • ");          // bullet points
+            const newline = lines[i].replace(/- /i, "        • ");          // bullet points
             // const newline1 = lines[i].replace(/->/gi, "➞");           // arrows
             formattedLines.push(newline + "\n");
         }else {
@@ -258,4 +261,14 @@ async function copyToClipboard() {
     } catch (err) {
     console.error("Failed to copy");
     }
+}
+
+document.querySelector("#frs-history").onclick = function() {
+
+    if (document.querySelector("#history-list").classList.contains("hidden")) {
+        document.querySelector("#history-list").classList.remove("hidden");
+    } else {
+        document.querySelector("#history-list").classList.add("hidden"); 
+    }
+
 }

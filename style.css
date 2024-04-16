@@ -78,6 +78,28 @@
     margin-left: 0;
 }
 
+.history-btn {
+    float: left;
+    margin-left: 0;
+}
+
+.history-container {
+    position: relative;
+    bottom: 5px;
+}
+
+.history-container ul {
+    display: none;
+    position: absolute;
+    bottom: -100px;
+    left: 28px;
+    border: 1px solid red;
+    padding: 25px 60px;
+    width: 251px;
+    transition: all .3s ease-in-out;
+
+}
+
 .main-section {
     /* margin: 0 115px; */
     margin: 0 auto;
